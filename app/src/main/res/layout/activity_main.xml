@@ -32,7 +32,7 @@
         android:text="Test your knowledge on bikes!" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnStart"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
         android:layout_marginLeft="100dp"
@@ -42,7 +42,7 @@
         android:text="Start" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnExit"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
         android:layout_marginLeft="100dp"
