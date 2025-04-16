@@ -1,6 +1,7 @@
 package com.example.quiz
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         }
          val btnStart = findViewById<Button>(R.id.btnStart)
         val btnExit = findViewById<Button>(R.id.btnExit)
+        val nextPage = Intent(this, QuizPage::class.java)
         var counter = 0
 
         btnExit.setOnClickListener{
@@ -33,6 +35,10 @@ class MainActivity : AppCompatActivity() {
             if  (counter == 2) {
                 exitProcess(0)
             }
+        }
+
+        btnStart.setOnClickListener{
+         startActivity(nextPage)
         }
 
     }
