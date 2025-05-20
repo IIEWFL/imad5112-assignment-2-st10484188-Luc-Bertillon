@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
          val btnStart = findViewById<Button>(R.id.btnStart)
         val btnExit = findViewById<Button>(R.id.btnExit)
         val nextPage = Intent(this, QuizPage::class.java)
+        val btnImg = findViewById<ImageButton>(R.id.btnImg)
         var counter = 0
 
         btnExit.setOnClickListener{
@@ -41,5 +43,8 @@ class MainActivity : AppCompatActivity() {
          startActivity(nextPage)
         }
 
+        btnImg.setOnClickListener{
+            Toast.makeText(this,"Answer questions by selecting True or False",Toast.LENGTH_SHORT).show()
+        }
     }
 }
