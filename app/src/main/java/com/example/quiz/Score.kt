@@ -15,7 +15,7 @@ class Score : AppCompatActivity() {
 
     private var counter = 0
 
-    @SuppressLint("MissingInflatedId")
+    @SuppressLint("MissingInflatedId", "SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -27,6 +27,18 @@ class Score : AppCompatActivity() {
         }
 
         val btnexit = findViewById<Button>(R.id.btnExit)
+        val txtscore = findViewById<TextView>(R.id.txtTitle)
+        val txtmessage = findViewById<TextView>(R.id.txtMessage)
+        val btnReview = findViewById<Button>(R.id.btnReview)
+
+        val score = intent.getIntExtra("score", 0)
+        txtscore.text = "Final Score:  $score/5"
+
+        txtmessage.text = if (score >= 3) {
+            "Great job!"
+        } else {
+            "Keep practising!"
+        }
 
         btnexit.setOnClickListener {
             val toast = Toast.makeText(this, "Click again to exit", Toast.LENGTH_SHORT)
