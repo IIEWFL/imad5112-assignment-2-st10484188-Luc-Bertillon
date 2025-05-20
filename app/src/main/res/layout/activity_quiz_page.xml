@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -7,18 +7,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/material_dynamic_primary70"
-    tools:context=".QuizPage">
+    tools:context=".QuizPage"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginRight="10dp"
-        android:text="Question 1" />
+        android:text="Question 1"
+        android:textSize="15dp"
+        tools:ignore="TextSizeCheck" />
 
     <TextView
         android:id="@+id/QuestionText"
@@ -51,7 +53,6 @@
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginTop="80dp"
-        android:background="@color/black"
         android:textSize="30dp"
         android:text="True" />
 
@@ -63,7 +64,6 @@
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginTop="50dp"
-        android:background="@color/black"
         android:textSize="30dp"
         android:text="False" />
 
@@ -76,8 +76,6 @@
         android:layout_marginRight="50dp"
         android:layout_marginTop="120dp"
         android:textSize="30dp"
-        android:background="@color/black"
         android:text="Next" />
-
 
 </LinearLayout>
