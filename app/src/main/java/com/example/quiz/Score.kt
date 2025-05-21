@@ -1,6 +1,7 @@
 package com.example.quiz
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -30,6 +31,9 @@ class Score : AppCompatActivity() {
         val txtscore = findViewById<TextView>(R.id.txtTitle)
         val txtmessage = findViewById<TextView>(R.id.txtMessage)
         val btnReview = findViewById<Button>(R.id.btnReview)
+        val reviewPage = Intent(this, Review::class.java)
+
+
 
         val score = intent.getIntExtra("score", 0)
         txtscore.text = "Final Score:  $score/5"
@@ -38,6 +42,13 @@ class Score : AppCompatActivity() {
             "Great job!"
         } else {
             "Keep practising!"
+        }
+        
+        btnReview.setOnClickListener{
+            reviewPage.putExtra("questions", intent.getStringArrayExtra("questions"))
+            reviewPage.putExtra("answers", intent.getStringArrayExtra("answers"))
+            startActivity(reviewPage)
+            finish()
         }
 
         btnexit.setOnClickListener {

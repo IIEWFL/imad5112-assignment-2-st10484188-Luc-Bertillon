@@ -51,6 +51,8 @@ class QuizPage : AppCompatActivity() {
         feedbackTextView = findViewById(R.id.txtfeedback)
 
 
+
+
         // Initialize intent properly inside onCreate
         scorePage = Intent(this, Score::class.java)
 
@@ -70,6 +72,9 @@ class QuizPage : AppCompatActivity() {
                 btnFalse.isEnabled = true
                 btnNext.isEnabled = false
             } else {
+                scorePage.putExtra("score", scoreCounter)
+                scorePage.putExtra("questions", questions)
+                scorePage.putExtra("answers", answers)
                 scorePage.putExtra("score", trueCounter)
                 startActivity(scorePage)
                 finish()
