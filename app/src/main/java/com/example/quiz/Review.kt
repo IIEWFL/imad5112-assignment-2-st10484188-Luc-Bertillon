@@ -22,6 +22,7 @@ class Review : AppCompatActivity() {
             insets
         }
 
+        //assigns values
         val btnRestart = findViewById<Button>(R.id.btnRestart)
         val btnExit = findViewById<Button>(R.id.btnExit)
         val txtQ1 = findViewById<TextView>(R.id.txtQ1)
@@ -29,6 +30,7 @@ class Review : AppCompatActivity() {
         val questions = intent.getStringArrayExtra("questions")
         val answers = intent.getBooleanArrayExtra("answers")
 
+        //takes the copied answers from the the score page and displays them
         val txtReviewAnswer = StringBuilder()
         if (questions != null && answers != null && questions.size == answers.size) {
             for (i in questions.indices) {

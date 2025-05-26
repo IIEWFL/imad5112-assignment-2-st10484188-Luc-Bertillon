@@ -27,6 +27,7 @@ class Score : AppCompatActivity() {
             insets
         }
 
+        //Assigns values
         val btnexit = findViewById<Button>(R.id.btnExit)
         val txtscore = findViewById<TextView>(R.id.txtTitle)
         val txtmessage = findViewById<TextView>(R.id.txtMessage)
@@ -43,7 +44,8 @@ class Score : AppCompatActivity() {
         } else {
             "Keep practising!"
         }
-        
+
+        //copies the answers and questions over to the review page
         btnReview.setOnClickListener{
             reviewPage.putExtra("questions", intent.getStringArrayExtra("questions"))
             reviewPage.putExtra("answers", intent.getStringArrayExtra("answers"))
@@ -51,6 +53,7 @@ class Score : AppCompatActivity() {
             finish()
         }
 
+        //displays a message to the user
         btnexit.setOnClickListener {
             val toast = Toast.makeText(this, "Click again to exit", Toast.LENGTH_SHORT)
             toast.show()

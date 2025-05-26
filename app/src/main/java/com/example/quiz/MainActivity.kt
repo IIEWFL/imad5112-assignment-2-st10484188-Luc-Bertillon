@@ -31,10 +31,11 @@ class MainActivity : AppCompatActivity() {
         // Intent to QuizPage
         val intent = Intent(this, QuizPage::class.java)
 
+        //Starts new page
         btnStart?.setOnClickListener {
             startActivity(intent)
         }
-
+        //Displays a toast to user
         btnExit.setOnClickListener {
             val toast = Toast.makeText(this, "Click again to exit", Toast.LENGTH_SHORT)
             toast.show()
@@ -42,10 +43,9 @@ class MainActivity : AppCompatActivity() {
 
             if (counter == 2) {
                 finishAffinity()
-                exitProcess(0)
             }
         }
-
+        //Displays a toast on how to play game
         btnImg.setOnClickListener {
             Toast.makeText(this, "Answer questions by selecting True or False", Toast.LENGTH_SHORT)
                 .show()
