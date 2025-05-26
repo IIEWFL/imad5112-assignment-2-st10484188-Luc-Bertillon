@@ -30,7 +30,8 @@ class QuizPage : AppCompatActivity() {
             "Motorcycles protect you from rain",
             "You can only carry 2 people on a bike at once"
         )
-
+        private val textArray = arrayOf("Question 2", "Question 3", "Question 4", "Question 5")
+        private var counter = 0
         val answers: BooleanArray = booleanArrayOf(false, true, true, false, true)
     }
     @SuppressLint("MissingInflatedId")
@@ -49,7 +50,7 @@ class QuizPage : AppCompatActivity() {
         btnFalse = findViewById(R.id.btnFalse)
         btnNext = findViewById(R.id.btnNext)
         feedbackTextView = findViewById(R.id.txtfeedback)
-
+        val txtquestion = findViewById<TextView>(R.id.txtQuestion)
 
 
 
@@ -64,7 +65,14 @@ class QuizPage : AppCompatActivity() {
         btnFalse.setOnClickListener { checkAnswer(false) }
 
         btnNext.setOnClickListener {
+
+            //Changes the number of question
+
+                txtquestion.text = textArray[counter]
+                counter = (counter + 1) % textArray.size
+
             scoreCounter++
+            //if the score counter is less that the size of the question number
             if (scoreCounter < questions.size) {
                 questionTextView.text = questions[scoreCounter]
                 feedbackTextView.text = ""
@@ -81,13 +89,15 @@ class QuizPage : AppCompatActivity() {
             }
         }
 
-        btnNext.isEnabled = false // Disable next button until an answer is selected
+        // Disable next button until an answer is selected
+        btnNext.isEnabled = false
     }
 
     @SuppressLint("SetTextI18n")
     private fun checkAnswer(userAnswer: Boolean) {
         val correctAnswer = answers[scoreCounter]
 
+        //checks to see if the users answer matches the correct answer
         if (userAnswer == correctAnswer) {
             feedbackTextView.text = "Correct!"
             feedbackTextView.setTextColor(Color.GREEN)
